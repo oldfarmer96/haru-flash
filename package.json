@@ -11,10 +11,6 @@
     "Keymaps",
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:haru-flash.start",
-    "onCommand:haru-flash.startSelection"
-  ],
   "main": "./dist/extension.js",
   "contributes": {
     "configuration": {
@@ -74,10 +70,6 @@
       {
         "command": "haru-flash.backspace",
         "title": "haru-flash: Backspace"
-      },
-      {
-        "command": "haru-flash.updateHighlights",
-        "title": "haru-flash: Update Highlights"
       }
     ],
     "keybindings": [
