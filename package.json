@@ -6,6 +6,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "publisher": "oldfarmer96",
+  "homepage": "https://github.com/oldfarmer96/haru-vscode",
   "repository": {
     "type": "git",
     "url": "https://github.com/oldfarmer96/haru-flash"
