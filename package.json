@@ -1,0 +1,598 @@
+{
+  "name": "flash-vscode",
+  "displayName": "flash-vscode",
+  "description": "Jump to any position with labels",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.118.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "publisher": "oldfarmer96",
+  "author": {
+    "name": "jose"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/oldfarmer96/flash-vscode",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oldfarmer96/flash-vscode.git"
+  },
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Flash vscode extension",
+      "properties": {
+        "flash-vscode.caseSensitive": {
+          "type": "boolean",
+          "default": true,
+          "description": "When enabled, search matches will be case sensitive."
+        },
+        "flash-vscode.dimColor": {
+          "type": "string",
+          "default": "rgba(128, 128, 128, 0.5)",
+          "description": "Color used to dim text."
+        },
+        "flash-vscode.matchColor": {
+          "type": "string",
+          "default": "rgb(0,191,255)",
+          "description": "Color used for matched text."
+        },
+        "flash-vscode.matchFontWeight": {
+          "type": "string",
+          "default": "normal",
+          "description": "Font weight for matched text."
+        },
+        "flash-vscode.labelColor": {
+          "type": "string",
+          "default": "black",
+          "description": "Color used for label text."
+        },
+        "flash-vscode.labelBackgroundColor": {
+          "type": "string",
+          "default": "#a3be8c",
+          "description": "Background color for labels."
+        },
+        "flash-vscode.labelQuestionBackgroundColor": {
+          "type": "string",
+          "default": "#ebcb8b",
+          "description": "Background color for question labels."
+        },
+        "flash-vscode.labelFontWeight": {
+          "type": "string",
+          "default": "normal",
+          "description": "Font weight for label text."
+        },
+        "flash-vscode.labelKeys": {
+          "type": "string",
+          "default": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+[]{}|;:'\",.<>/`~\\",
+          "description": "Characters to use for labels."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "flash-vscode.start",
+        "title": "flash-vscode: Start Navigation"
+      },
+      {
+        "command": "flash-vscode.startSelection",
+        "title": "flash-vscode: Start Navigation with Selection"
+      },
+      {
+        "command": "flash-vscode.backspace",
+        "title": "flash-vscode: Backspace"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "flash-vscode.exit",
+        "key": "escape",
+        "when": "flash-vscode.active"
+      },
+      {
+        "command": "flash-vscode.jump.space",
+        "key": "space",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.a",
+        "key": "a",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.b",
+        "key": "b",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.c",
+        "key": "c",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.d",
+        "key": "d",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.e",
+        "key": "e",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.f",
+        "key": "f",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.g",
+        "key": "g",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.h",
+        "key": "h",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.i",
+        "key": "i",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.j",
+        "key": "j",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.k",
+        "key": "k",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.l",
+        "key": "l",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.m",
+        "key": "m",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.n",
+        "key": "n",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.o",
+        "key": "o",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.p",
+        "key": "p",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.q",
+        "key": "q",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.r",
+        "key": "r",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.s",
+        "key": "s",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.t",
+        "key": "t",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.u",
+        "key": "u",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.v",
+        "key": "v",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.w",
+        "key": "w",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.x",
+        "key": "x",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.y",
+        "key": "y",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.z",
+        "key": "z",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.A",
+        "key": "shift+a",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.B",
+        "key": "shift+b",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.C",
+        "key": "shift+c",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.D",
+        "key": "shift+d",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.E",
+        "key": "shift+e",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.F",
+        "key": "shift+f",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.G",
+        "key": "shift+g",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.H",
+        "key": "shift+h",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.I",
+        "key": "shift+i",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.J",
+        "key": "shift+j",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.K",
+        "key": "shift+k",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.L",
+        "key": "shift+l",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.M",
+        "key": "shift+m",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.N",
+        "key": "shift+n",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.O",
+        "key": "shift+o",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.P",
+        "key": "shift+p",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.Q",
+        "key": "shift+q",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.R",
+        "key": "shift+r",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.S",
+        "key": "shift+s",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.T",
+        "key": "shift+t",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.U",
+        "key": "shift+u",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.V",
+        "key": "shift+v",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.W",
+        "key": "shift+w",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.X",
+        "key": "shift+x",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.Y",
+        "key": "shift+y",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.Z",
+        "key": "shift+z",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.1",
+        "key": "1",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.2",
+        "key": "2",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.3",
+        "key": "3",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.4",
+        "key": "4",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.5",
+        "key": "5",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.6",
+        "key": "6",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.7",
+        "key": "7",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.8",
+        "key": "8",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.9",
+        "key": "9",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.0",
+        "key": "0",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.!",
+        "key": "shift+1",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.@",
+        "key": "shift+2",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.#",
+        "key": "shift+3",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.$",
+        "key": "shift+4",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.%",
+        "key": "shift+5",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.^",
+        "key": "shift+6",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.&",
+        "key": "shift+7",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.*",
+        "key": "shift+8",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.(",
+        "key": "shift+9",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.)",
+        "key": "shift+0",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.-",
+        "key": "-",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump._",
+        "key": "shift+-",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.=",
+        "key": "=",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.+",
+        "key": "shift+=",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.[",
+        "key": "[",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.]",
+        "key": "]",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.{",
+        "key": "shift+[",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.}",
+        "key": "shift+]",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.|",
+        "key": "shift+\\",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.;",
+        "key": ";",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.:",
+        "key": "shift+;",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.'",
+        "key": "'",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.\"",
+        "key": "shift+'",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.,",
+        "key": ",",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump..",
+        "key": ".",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.<",
+        "key": "shift+,",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.>",
+        "key": "shift+.",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump./",
+        "key": "/",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.`",
+        "key": "`",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.~",
+        "key": "shift+`",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.\\",
+        "key": "\\",
+        "when": "flash-vscode.active && editorTextFocus"
+      },
+      {
+        "command": "flash-vscode.jump.?",
+        "key": "shift+/",
+        "when": "flash-vscode.active && editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.118.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.56.1",
+    "eslint": "^9.39.3",
+    "esbuild": "^0.27.3",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
