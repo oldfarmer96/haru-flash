@@ -1,6 +1,6 @@
 {
-  "name": "flash-vscode",
-  "displayName": "flash-vscode",
+  "name": "haru-flash",
+  "displayName": "haru-flash",
   "description": "Jump to any position with labels",
   "version": "0.0.1",
   "engines": {
@@ -23,49 +23,44 @@
   "main": "./dist/extension.js",
   "contributes": {
     "configuration": {
-      "title": "Flash vscode extension",
+      "title": "Haru Flash extension",
       "properties": {
-        "flash-vscode.caseSensitive": {
-          "type": "boolean",
-          "default": true,
-          "description": "When enabled, search matches will be case sensitive."
-        },
-        "flash-vscode.dimColor": {
+        "haru-flash.dimColor": {
           "type": "string",
           "default": "rgba(128, 128, 128, 0.5)",
           "description": "Color used to dim text."
         },
-        "flash-vscode.matchColor": {
+        "haru-flash.matchColor": {
           "type": "string",
           "default": "rgb(0,191,255)",
           "description": "Color used for matched text."
         },
-        "flash-vscode.matchFontWeight": {
+        "haru-flash.matchFontWeight": {
           "type": "string",
           "default": "normal",
           "description": "Font weight for matched text."
         },
-        "flash-vscode.labelColor": {
+        "haru-flash.labelColor": {
           "type": "string",
           "default": "black",
           "description": "Color used for label text."
         },
-        "flash-vscode.labelBackgroundColor": {
+        "haru-flash.labelBackgroundColor": {
           "type": "string",
           "default": "#a3be8c",
           "description": "Background color for labels."
         },
-        "flash-vscode.labelQuestionBackgroundColor": {
+        "haru-flash.labelQuestionBackgroundColor": {
           "type": "string",
           "default": "#ebcb8b",
           "description": "Background color for question labels."
         },
-        "flash-vscode.labelFontWeight": {
+        "haru-flash.labelFontWeight": {
           "type": "string",
           "default": "normal",
           "description": "Font weight for label text."
         },
-        "flash-vscode.labelKeys": {
+        "haru-flash.labelKeys": {
           "type": "string",
           "default": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+[]{}|;:'\",.<>/`~\\",
           "description": "Characters to use for labels."
@@ -74,498 +69,498 @@
     },
     "commands": [
       {
-        "command": "flash-vscode.start",
-        "title": "flash-vscode: Start Navigation"
+        "command": "haru-flash.start",
+        "title": "haru-flash: Start Navigation"
       },
       {
-        "command": "flash-vscode.startSelection",
-        "title": "flash-vscode: Start Navigation with Selection"
+        "command": "haru-flash.startSelection",
+        "title": "haru-flash: Start Navigation with Selection"
       },
       {
-        "command": "flash-vscode.backspace",
-        "title": "flash-vscode: Backspace"
+        "command": "haru-flash.backspace",
+        "title": "haru-flash: Backspace"
       }
     ],
     "keybindings": [
       {
-        "command": "flash-vscode.exit",
+        "command": "haru-flash.exit",
         "key": "escape",
-        "when": "flash-vscode.active"
+        "when": "haru-flash.active"
       },
       {
-        "command": "flash-vscode.jump.space",
+        "command": "haru-flash.jump.space",
         "key": "space",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.a",
+        "command": "haru-flash.jump.a",
         "key": "a",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.b",
+        "command": "haru-flash.jump.b",
         "key": "b",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.c",
+        "command": "haru-flash.jump.c",
         "key": "c",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.d",
+        "command": "haru-flash.jump.d",
         "key": "d",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.e",
+        "command": "haru-flash.jump.e",
         "key": "e",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.f",
+        "command": "haru-flash.jump.f",
         "key": "f",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.g",
+        "command": "haru-flash.jump.g",
         "key": "g",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.h",
+        "command": "haru-flash.jump.h",
         "key": "h",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.i",
+        "command": "haru-flash.jump.i",
         "key": "i",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.j",
+        "command": "haru-flash.jump.j",
         "key": "j",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.k",
+        "command": "haru-flash.jump.k",
         "key": "k",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.l",
+        "command": "haru-flash.jump.l",
         "key": "l",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.m",
+        "command": "haru-flash.jump.m",
         "key": "m",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.n",
+        "command": "haru-flash.jump.n",
         "key": "n",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.o",
+        "command": "haru-flash.jump.o",
         "key": "o",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.p",
+        "command": "haru-flash.jump.p",
         "key": "p",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.q",
+        "command": "haru-flash.jump.q",
         "key": "q",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.r",
+        "command": "haru-flash.jump.r",
         "key": "r",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.s",
+        "command": "haru-flash.jump.s",
         "key": "s",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.t",
+        "command": "haru-flash.jump.t",
         "key": "t",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.u",
+        "command": "haru-flash.jump.u",
         "key": "u",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.v",
+        "command": "haru-flash.jump.v",
         "key": "v",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.w",
+        "command": "haru-flash.jump.w",
         "key": "w",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.x",
+        "command": "haru-flash.jump.x",
         "key": "x",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.y",
+        "command": "haru-flash.jump.y",
         "key": "y",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.z",
+        "command": "haru-flash.jump.z",
         "key": "z",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.A",
+        "command": "haru-flash.jump.A",
         "key": "shift+a",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.B",
+        "command": "haru-flash.jump.B",
         "key": "shift+b",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.C",
+        "command": "haru-flash.jump.C",
         "key": "shift+c",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.D",
+        "command": "haru-flash.jump.D",
         "key": "shift+d",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.E",
+        "command": "haru-flash.jump.E",
         "key": "shift+e",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.F",
+        "command": "haru-flash.jump.F",
         "key": "shift+f",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.G",
+        "command": "haru-flash.jump.G",
         "key": "shift+g",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.H",
+        "command": "haru-flash.jump.H",
         "key": "shift+h",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.I",
+        "command": "haru-flash.jump.I",
         "key": "shift+i",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.J",
+        "command": "haru-flash.jump.J",
         "key": "shift+j",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.K",
+        "command": "haru-flash.jump.K",
         "key": "shift+k",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.L",
+        "command": "haru-flash.jump.L",
         "key": "shift+l",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.M",
+        "command": "haru-flash.jump.M",
         "key": "shift+m",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.N",
+        "command": "haru-flash.jump.N",
         "key": "shift+n",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.O",
+        "command": "haru-flash.jump.O",
         "key": "shift+o",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.P",
+        "command": "haru-flash.jump.P",
         "key": "shift+p",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.Q",
+        "command": "haru-flash.jump.Q",
         "key": "shift+q",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.R",
+        "command": "haru-flash.jump.R",
         "key": "shift+r",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.S",
+        "command": "haru-flash.jump.S",
         "key": "shift+s",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.T",
+        "command": "haru-flash.jump.T",
         "key": "shift+t",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.U",
+        "command": "haru-flash.jump.U",
         "key": "shift+u",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.V",
+        "command": "haru-flash.jump.V",
         "key": "shift+v",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.W",
+        "command": "haru-flash.jump.W",
         "key": "shift+w",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.X",
+        "command": "haru-flash.jump.X",
         "key": "shift+x",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.Y",
+        "command": "haru-flash.jump.Y",
         "key": "shift+y",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.Z",
+        "command": "haru-flash.jump.Z",
         "key": "shift+z",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.1",
+        "command": "haru-flash.jump.1",
         "key": "1",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.2",
+        "command": "haru-flash.jump.2",
         "key": "2",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.3",
+        "command": "haru-flash.jump.3",
         "key": "3",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.4",
+        "command": "haru-flash.jump.4",
         "key": "4",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.5",
+        "command": "haru-flash.jump.5",
         "key": "5",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.6",
+        "command": "haru-flash.jump.6",
         "key": "6",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.7",
+        "command": "haru-flash.jump.7",
         "key": "7",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.8",
+        "command": "haru-flash.jump.8",
         "key": "8",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.9",
+        "command": "haru-flash.jump.9",
         "key": "9",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.0",
+        "command": "haru-flash.jump.0",
         "key": "0",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.!",
+        "command": "haru-flash.jump.!",
         "key": "shift+1",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.@",
+        "command": "haru-flash.jump.@",
         "key": "shift+2",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.#",
+        "command": "haru-flash.jump.#",
         "key": "shift+3",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.$",
+        "command": "haru-flash.jump.$",
         "key": "shift+4",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.%",
+        "command": "haru-flash.jump.%",
         "key": "shift+5",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.^",
+        "command": "haru-flash.jump.^",
         "key": "shift+6",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.&",
+        "command": "haru-flash.jump.&",
         "key": "shift+7",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.*",
+        "command": "haru-flash.jump.*",
         "key": "shift+8",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.(",
+        "command": "haru-flash.jump.(",
         "key": "shift+9",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.)",
+        "command": "haru-flash.jump.)",
         "key": "shift+0",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.-",
+        "command": "haru-flash.jump.-",
         "key": "-",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump._",
+        "command": "haru-flash.jump._",
         "key": "shift+-",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.=",
+        "command": "haru-flash.jump.=",
         "key": "=",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.+",
+        "command": "haru-flash.jump.+",
         "key": "shift+=",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.[",
+        "command": "haru-flash.jump.[",
         "key": "[",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.]",
+        "command": "haru-flash.jump.]",
         "key": "]",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.{",
+        "command": "haru-flash.jump.{",
         "key": "shift+[",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.}",
+        "command": "haru-flash.jump.}",
         "key": "shift+]",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.|",
+        "command": "haru-flash.jump.|",
         "key": "shift+\\",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.;",
+        "command": "haru-flash.jump.;",
         "key": ";",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.:",
+        "command": "haru-flash.jump.:",
         "key": "shift+;",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.'",
+        "command": "haru-flash.jump.'",
         "key": "'",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.\"",
+        "command": "haru-flash.jump.\"",
         "key": "shift+'",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.,",
+        "command": "haru-flash.jump.,",
         "key": ",",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump..",
+        "command": "haru-flash.jump..",
         "key": ".",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.<",
+        "command": "haru-flash.jump.<",
         "key": "shift+,",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.>",
+        "command": "haru-flash.jump.>",
         "key": "shift+.",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump./",
+        "command": "haru-flash.jump./",
         "key": "/",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.`",
+        "command": "haru-flash.jump.`",
         "key": "`",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.~",
+        "command": "haru-flash.jump.~",
         "key": "shift+`",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.\\",
+        "command": "haru-flash.jump.\\",
         "key": "\\",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       },
       {
-        "command": "flash-vscode.jump.?",
+        "command": "haru-flash.jump.?",
         "key": "shift+/",
-        "when": "flash-vscode.active && editorTextFocus"
+        "when": "haru-flash.active && editorTextFocus"
       }
     ]
   },
