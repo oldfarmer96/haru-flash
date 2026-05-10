@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { activateMode, triggerUpdate } from "../state";
+import { activateMode, triggerUpdate, disableSelectionMode } from "../state";
 
 /**
  * Starts navigation mode with standard cursor movement.
@@ -7,6 +7,7 @@ import { activateMode, triggerUpdate } from "../state";
  */
 export function registerStart(context: vscode.ExtensionContext): vscode.Disposable {
   return vscode.commands.registerCommand("haru-flash.start", () => {
+    disableSelectionMode();
     activateMode();
     triggerUpdate();
   });
