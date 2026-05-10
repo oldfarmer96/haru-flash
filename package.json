@@ -2,6 +2,7 @@
   "name": "haru-flash",
   "displayName": "haru-flash",
   "description": "Lightning-fast label-based code navigation. Inspired by flash.nvim, jump to any visible position with 2-3 keystrokes. Vim-compatible with VSCodeVim integration.",
+  "icon": "assets/icon.png",
   "version": "0.0.1",
   "keywords": [
     "vim",
