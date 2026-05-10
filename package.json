@@ -1,25 +1,20 @@
 {
   "name": "haru-flash",
   "displayName": "haru-flash",
-  "description": "Jump to any position with labels",
+"description": "Lightning-fast label-based code navigation. Inspired by flash.nvim, jump to any visible position with 2-3 keystrokes. Vim-compatible with VSCodeVim integration.",
   "version": "0.0.1",
+  "keywords": ["vim", "navigation", "flash", "jump", "easymotion", "vscodevim", "keybindings", "code-navigation", "label-jump"],
   "engines": {
     "vscode": "^1.118.0"
   },
   "categories": [
+    "Keymaps",
     "Other"
   ],
-  "publisher": "oldfarmer96",
-  "author": {
-    "name": "jose"
-  },
-  "license": "MIT",
-  "homepage": "https://github.com/oldfarmer96/flash-vscode",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/oldfarmer96/flash-vscode.git"
-  },
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:haru-flash.start",
+    "onCommand:haru-flash.startSelection"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "configuration": {
@@ -79,6 +74,10 @@
       {
         "command": "haru-flash.backspace",
         "title": "haru-flash: Backspace"
+      },
+      {
+        "command": "haru-flash.updateHighlights",
+        "title": "haru-flash: Update Highlights"
       }
     ],
     "keybindings": [
